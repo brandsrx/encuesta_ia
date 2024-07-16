@@ -1,17 +1,54 @@
+"use client"
 import Head from 'next/head';
 import Image from 'next/image';
 import Card from './components/card';
+const downloadFile = (fileUrl) => {
+  const link = document.createElement('a');
+  link.href = fileUrl;
+
+  // Establece el atributo 'download' para indicar que es una descarga
+  link.setAttribute('download', '');
+
+  // Simula un clic en el enlace para activar la descarga
+  document.body.appendChild(link);
+  link.click();
+
+  // Elimina el elemento despus de la descarga
+  document.body.removeChild(link);
+};
 export default function Home() {
+  const handleDownloadExcel = () => {
+    // URL de ejemplo para un archivo Excel
+    const excelUrl = '/ia.xlsx';
+    downloadFile(excelUrl);
+  };
+
+  const handleDownloadPDF = () => {
+    // URL de ejemplo para un archivo PDF
+    const pdfUrl = '/IA_ENCUESTA_oficial.pdf';
+    downloadFile(pdfUrl);
+  };
   return (
       <main className=" mx-auto " >
 
         <div className='c-dark'>
         <section className="text-center py-16 ">
-          <h1 className="text-4xl font-bold mb-4">AI Survey Results</h1>
-          <p className="text-lg mb-8">Explore the key insights and trends from our comprehensive survey on the state of artificial intelligence.</p>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-            Download Report
-          </button>
+          <h1 className="text-4xl font-bold mb-4">Sitio web sobre resultado de <br/> encuesta sobre la IA</h1>
+          <p className="text-lg mb-8">Explore los conocimientos y tendencias clave de nuestra encuesta integral sobre el estado de la inteligencia artificial.</p>
+          <div className="space-x-4">
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleDownloadExcel}
+            >
+              Download Excel
+            </button>
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+              onClick={handleDownloadPDF}
+            >
+              Download PDF
+            </button>
+          </div>
         </section>
 
         <section className="bg-gray-800 rounded-lg p-8 mt-8" >

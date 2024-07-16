@@ -1,63 +1,51 @@
 "use client"
 import React, { useRef, useState } from "react";
-import ScrollSpy from "react-ui-scrollspy";
+import Image from "next/image";
 import "./style.css"; // Importa tus estilos CSS aquí
 
-const ScrollSpyExample = () => {
-  const parentScrollContainerRef = useRef(null);
-  const [activeSection, setActiveSection] = useState(""); // Estado para la sección activa
-
-  const handleScrollChange = (currentSectionId) => {
-    setActiveSection(currentSectionId); // Actualiza el estado de la sección activa
-  };
-
+function Acerca() {
   return (
-    <div className="container">
-      <div className="sidebar">
-        <ScrollSpy
-          parentScrollContainerRef={() => parentScrollContainerRef.current}
-          onSectionEnter={(sectionId) => handleScrollChange(sectionId)}
-          offset={-100} // Ajusta el offset según tus necesidades
-        >
-          <ul>
-            <li>
-              <a href="#section1" className={activeSection === "section1" ? "active" : ""}>
-                Section 1
-              </a>
-            </li>
-            <li>
-              <a href="#section2" className={activeSection === "section2" ? "active" : ""}>
-                Section 2
-              </a>
-            </li>
-            <li>
-              <a href="#section3" className={activeSection === "section3" ? "active" : ""}>
-                Section 3
-              </a>
-            </li>
+    <div className="flex flex-col items-center bg-gray-100">
+      <header className="w-full bg-neutral-800 text-white py-20 flex justify-center items-center">
+        <h4 className="text-4xl font-bold text-center mx-4 animate-fadeIn">
+          Nuestra misión es ayudar a las personas a ver los datos de nuevas maneras, descubrir ideas, desbloquear posibilidades sin fin.
+        </h4>
+      </header>
+      <main className="w-full max-w-6xl px-4 py-8">
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Acerca de Nosotros</h2>
+          <p className="text-lg leading-relaxed">
+            Somos un grupo de estudiantes de informatica de la Universidad Mayor de San Andres (UMSA) 
+          </p>
+          <Image src="/pajaro.webp" alt="About Us" width={600} height={400} className="mt-6 rounded-lg shadow-md" />
+        </section>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Quiénes Somos</h2>
+          <p className="text-lg leading-relaxed">
+            Un equipo de profesionales apasionados por la tecnología y el análisis de datos. 
+            Estamos comprometidos con la innovación y la excelencia en todos nuestros proyectos.
+          </p>
+        </section>
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold mb-4">Misión</h2>
+          <p className="text-lg leading-relaxed">
+           Mostrar los datos obtenidos atravez de una encuesta realizada sobre que es la inteligencia artificial
+           mostrar de forma grafica y en una tabla de frecuencias
+          </p>
+        </section>
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Integrantes del Proyecto</h2>
+          <ul className="list-disc list-inside text-lg leading-relaxed">
+            <li>Ramiro Brandon Mamani Quisbert</li>
+            <li>..</li>
+            <li>..</li>
+            <li>..</li>
+            <li>..</li>
           </ul>
-        </ScrollSpy>
-      </div>
-      <div
-        ref={parentScrollContainerRef}
-        className="scroll-container"
-        style={{ height: "500px", overflowY: "scroll" }}
-      >
-        <div id="section1" className="section">
-          <h2>Section 1</h2>
-          <p>Contenido de la sección 1</p>
-        </div>
-        <div id="section2" className="section">
-          <h2>Section 2</h2>
-          <p>Contenido de la sección 2</p>
-        </div>
-        <div id="section3" className="section">
-          <h2>Section 3</h2>
-          <p>Contenido de la sección 3</p>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
   );
-};
+}
 
-export default ScrollSpyExample;
+export default Acerca;

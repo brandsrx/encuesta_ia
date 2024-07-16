@@ -5,7 +5,7 @@ import { Chart as ChartJS, ArcElement,CategoryScale, LinearScale, BarElement, Ti
 
 ChartJS.register(CategoryScale, LinearScale,ArcElement, BarElement, Title, Tooltip, Legend);
 
-export function TablaFrecuencia({ pregunta }) {
+export function TablaFrecuencia({ pregunta ,seccion}) {
    const [jsonData, setJsonData] = useState(null);
    const [itemsTable, setItemsTable] = useState([]);
     const ab = ["a","b","c","d","e","f","g","h"]
@@ -23,7 +23,7 @@ export function TablaFrecuencia({ pregunta }) {
           throw new Error('Error al cargar el archivo JSON');
         }
         const data = await response.json();
-        const aux = data.seccion1[pregunta.cod];
+        const aux = seccion == "1"?data.seccion1[pregunta.cod]:data.seccion2[pregunta.cod];
         
         let vecAbs = Object.values(aux.frecuencia_absoluta);
         let vecRel = Object.values(aux.frecuencia_relativa);
@@ -103,20 +103,17 @@ export function TablaFrecuencia({ pregunta }) {
   );
 }
 
-export function DiagramaBarras({data,variables,cod}){
-    if (!data || !data.seccion1 || !data.seccion1[cod]) {
+export function DiagramaBarras({data,variables,cod,seccion}){
+    if (!data) {
         return <p>Cargando datos...</p>; // Mostrar un mensaje de carga si los datos no están listos
     }
+    const dataJson = (seccion == "1")?data.seccion1[cod]:data.seccion2[cod];
     const ab = ["a","b","c","d","e","f","g","h"]
-    const dato = data.seccion1[cod]
-    console.log(dato)
-    const frecuenciaAbsoluta = Object.values(data.seccion1[cod].frecuencia_absoluta);
+    const frecuenciaAbsoluta = Object.values(dataJson.frecuencia_absoluta);
     const items = [];
-    console.log(data)
-    for(let i =0;i<data.seccion1[cod].nroPreguntas;i++){
+    for(let i =0;i<data.nroPreguntas;i++){
         items.push(data[ab[i]])
     }
-    console.log(items)
     const chartData = {
         labels: variables,
         datasets: [
@@ -145,14 +142,11 @@ export function DiagramaBarras({data,variables,cod}){
 
     return <Bar data={chartData} options={options} />;
 }
-export function DiagramaCircular({ data, variables,cod }){
-    if (!data || !data.seccion1 || !data.seccion1[cod]) {
+export function DiagramaCircular({ data, variables,cod ,seccion}){
+    if (!data) {
         return <p>Cargando datos...</p>; // Mostrar un mensaje de carga si los datos no están listos
     }
-
-    const dato = data.seccion1[cod];
-
-
+    const dato = (seccion == "1")?data.seccion1[cod]:data.seccion2[cod];
     const frecuenciaAbsoluta = Object.values(dato.frecuencia_porcentual);
     const labels = Object.keys(dato.frecuencia_porcentual);
 
