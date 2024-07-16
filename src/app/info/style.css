@@ -1,0 +1,49 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .scroll-container {
+    margin-left: 220px; /* Ajusta según el ancho de la barra lateral */
+    padding: 20px;
+  }
+  
+  .section {
+    margin-bottom: 500px; /* Espacio para simular el contenido largo de las secciones */
+  }
+  
+  .section h2 {
+    margin-bottom: 10px;
+  }
+/* Estilo para los enlaces de la barra de navegación */
+.sidebar ul li a {
+    color: black; /* Color de texto normal */
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+  }
+  
+  /* Estilo para los enlaces activos */
+  .sidebar ul li a.active {
+    color: blue; /* Cambia el color de texto cuando el enlace está activo */
+  }
+    
