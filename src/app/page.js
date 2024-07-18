@@ -87,22 +87,21 @@ export default function Home() {
     </ul>
   </section>
 </div>
-
-        <section id="key-insights" className="text-center py-16" style={{backgroundColor:"#F4F4F5"}}>
-          <h2 className="text-3xl font-bold mb-4">Key Insights</h2>
-          <p className="text-lg mb-8">Explore the most significant findings from our comprehensive survey on the state of artificial intelligence.</p>
+        <section id="key-insights" className="text-center justiy-center py-16" style={{backgroundColor:"#F4F4F5"}} >
+          <h2 className="text-3xl font-bold mb-4">Formas de visualizar los datos</h2>
+          <p className="text-lg mb-8">Existen varias formas efectivas de visualizar datos, cada una adecuada para diferentes tipos de información.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card/>
-            <Card/>
-            <Card/>
+          <Card title="Tabla de Frecuencias" lista={["Datos numéricos", "Frecuencias por categoría", "Resumen estadístico"]} />
+          <Card title="Diagrama de Barras" lista={["Comparación de opciones", "Evolución a lo largo del tiempo", "Ranking de preferencias"]} />
+          <Card title="Diagrama Circular" lista={["Distribución porcentual", "Participación de segmentos", "Composición por grupo"]} />
           </div>
         </section>
-        <section id="key-insights" className="text-center justiy-center py-16" >
-          <h2 className="text-3xl font-bold mb-4">estts</h2>
-          <p className="text-lg mb-8">Explore the most significant findings from our comprehensive survey on the state of artificial intelligence.</p>
-          <div className="flex justify-center">
-            <Card/>
-            <Card/>
+        <section id="key-insights" className="text-center py-16">
+          <h2 className="text-3xl font-bold mb-4">Datos de la Encuesta</h2>
+          <p className="text-lg mb-8">Expoloraremos sobre los datos de la encuesta .</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card title="Resultados" lista={["Resultados positivos", "Estadísticas destacadas", "Tendencias emergentes"]} />
+              <Card title="Demografía" lista={["Edades variadas", "Género diverso", "Etnias representadas"]} />
           </div>
         </section>
       </main>

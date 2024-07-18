@@ -1,0 +1,41 @@
+.mi-componente {
+    position: relative;
+  }
+  .btn{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    top: 0;
+    font-weight: bold
+  }
+  .btn:hover{
+    cursor: pointer;
+    color: brown;
+  }
+  .menu-container {
+    box-shadow: 0px 0px 2px 1px rgba(182, 178, 178, 0.659);
+    position: absolute;
+    top: 0;
+    left: -250px; /* Fuera de la pantalla a la izquierda */
+    width: 250px;
+    height: 100lvh;
+    transition: left 0.3s ease; /* Transición suave para la propiedad left */
+  }
+  
+  .menu-container.open {
+    left: 0; /* Mostrar el menú deslizando hacia la derecha */
+  }
+  
+  .menu-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-container ul li {
+    padding: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  

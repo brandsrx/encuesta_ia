@@ -1,8 +1,13 @@
 import { useState } from 'react';
-
+import Image from 'next/image';
+import './AccordionMenu.css';
 export default function AccordionMenu() {
   const [openSection, setOpenSection] = useState(null);
+  const [menuVisible, setMenuVisible] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  };
   const toggleSection = (section) => {
     setOpenSection(openSection === section ? null : section);
   };
@@ -21,11 +26,13 @@ export default function AccordionMenu() {
   ];
 
   return (
-    <nav className="w-1/5 max-w-sm mx-auto bg-white shadow-md rounded-lg fixed  left" style={{top:"80px"}}>
-    <ul className="flex flex-col p-4">
+    <nav className="max-w-sm mx-auto bg-white shadow-md rounded-lg fixed  left" style={{top:"55px"}}>
+      <button onClick={toggleMenu}><Image src="./menu.svg" width={30} height={30}/></button>
+    <ul className={`flex flex-col  p-4 menu-container bg-white shadow-md  rounded-lg ${menuVisible ? 'open' : ''}`} style={{width:"250px"}}>
         <li className='w-full text-left text-lg font-medium text-gray-700 hover:text-blue-600 focus:outline-none transition-colors duration-300'>
            <a href='#'> Analisis de Encuesta</a>
         </li>
+        <button onClick={toggleMenu} className='btn'>X</button>
       {sections.map((section) => (
         <li key={section.id} className="mb-2">
           <button

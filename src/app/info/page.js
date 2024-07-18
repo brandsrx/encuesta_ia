@@ -22,9 +22,10 @@ function Acerca() {
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Quiénes Somos</h2>
           <p className="text-lg leading-relaxed">
-            Un equipo de profesionales apasionados por la tecnología y el análisis de datos. 
-            Estamos comprometidos con la innovación y la excelencia en todos nuestros proyectos.
+            Un equipo de estudiantes que llevan a cabo un proyecto de encuestas de la materia de Estadistica I de la carrera de Informatica UMSA
           </p>
+          <p className="text-lg">Enlace del repositorio de la web: <a target="_blank" style={{color:"blue"}} href="https://github.com/brandsrx/encuesta_ia">https://github.com/brandsrx/encuesta_ia</a> </p>
+
         </section>
         <section className="mb-12">
           <h2 className="text-3xl font-bold mb-4">Misión</h2>
@@ -36,11 +37,15 @@ function Acerca() {
         <section>
           <h2 className="text-3xl font-bold mb-4">Integrantes del Proyecto</h2>
           <ul className="list-disc list-inside text-lg leading-relaxed">
-            <li>Ramiro Brandon Mamani Quisbert</li>
-            <li>..</li>
-            <li>..</li>
-            <li>..</li>
-            <li>..</li>
+            <li>Univ. Ramiro Brandon Mamani Quisbert</li>
+            <li>Univ. Mamani Chamizo Melany Abril</li>
+            <li>Univ. Mamani Perez Alexander Mauricio</li>
+            <li>Univ. Mamani Laguna Josue Hugo</li>
+            <li>Univ. Mamani Trujillo Deivid Enrique</li>
+            <li>Univ. Macias Trujillo Milton Camilo </li>
+            <li>Univ. Tola Julian Alex David</li>
+            <li>Univ. Ayala Quispe Franco Mario</li>
+            <li>Univ. Macias Quispe Sergio Alejandro</li>
           </ul>
         </section>
       </main>
