@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import AccordionMenu from '../components/acordionMenu';
 import {TablaFrecuencia,DiagramaBarras,DiagramaCircular} from "../components/tablas"
 export default function MarcoAplicativo(){
@@ -206,9 +207,10 @@ export default function MarcoAplicativo(){
           </div>
           <div id='tablas_bibariantes'> 
           <h3 className="text-2xl font-bold mb-4">Tablas bibariantes</h3>
-          <p className="text-lg mb-4">
-            Se espera que este estudio arroje luz sobre las áreas donde se necesita más educación y conciencia pública sobre la IA en La Paz. Además, se espera que los resultados informen la formulación de políticas que promuevan la adopción responsable de la IA y la preparación educativa de la población para los cambios tecnológicos futuros.
-          </p>
+          <div>
+          <Image src="/bi1.png" width={500} height={500}></Image>
+          <Image src="/b2.png" width={500} height={500}></Image>
+          </div>
           </div>
           <div id='resultado_Final'>
           <h3 className="text-2xl font-bold mb-4" id='resultado'>Resultado total de la encuesta</h3>

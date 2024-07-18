@@ -28,6 +28,7 @@ export function TablaFrecuencia({ pregunta ,seccion}) {
         let vecAbs = Object.values(aux.frecuencia_absoluta);
         let vecRel = Object.values(aux.frecuencia_relativa);
         let vecPor = Object.values(aux.frecuencia_porcentual);
+        console.log(vecAbs)
         vecAbs.splice(pregunta.nroPreguntas)
         vecRel.splice(pregunta.nroPreguntas)
         vecPor.splice(pregunta.nroPreguntas)
@@ -40,6 +41,7 @@ export function TablaFrecuencia({ pregunta ,seccion}) {
           total2: sumarVector(vecRel),
           total3: sumarVector(vecPor),
         };
+
 
         setJsonData(n);
       } catch (error) {
