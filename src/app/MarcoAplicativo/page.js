@@ -186,7 +186,7 @@ export default function MarcoAplicativo(){
                 seccion="2"
             />
                 <DiagramaBarras data={jsonData} cod="13P" variables={["Es una oportunidad para nuevos empleos","Es una amenaza","Es inevitable","No tengo una opnion clatra"]} seccion="2" />
-                <DiagramaCircular data={jsonData} cod="13P" variables={[["Es una oportunidad para nuevos empleos","Es una amenaza","Es inevitable","No tengo una opnion clatra"]]} seccion="2" />
+                <DiagramaCircular data={jsonData} cod="13P" variables={["Es una oportunidad para nuevos empleos","Es una amenaza","Es inevitable","No tengo una opnion clatra"]} seccion="2" />
             </div>
             <div className='preg14' id='seccion2pregunta-14'>
               <h2 className='text-xl  mb-4'>Pregunta 14</h2>
